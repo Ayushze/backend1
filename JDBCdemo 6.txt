@@ -1,0 +1,35 @@
+package packasfs;
+
+import java.util.*;
+import java.sql.*;
+public class demo6 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter ID: ");
+		int id = sc.nextInt();
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection a = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployee","root","Tiger@123");
+			PreparedStatement x = a.prepareStatement("delete from emp2 where id = ?");
+			
+			x.setInt(1,id);
+			
+			System.out.println("Do you really want to delete this id: ");
+			System.out.print("Press Y if yes or press N if no: ");
+			String op = sc.next();
+			if(op.equalsIgnoreCase("Y")||op.equalsIgnoreCase("yes")||op.equalsIgnoreCase("Yes")||op.equalsIgnoreCase("YES")) {
+				x.execute();
+				System.out.println("data deleted.......");
+			}
+			else{System.out.println("data saved again.......");}
+			x.close();
+			a.close();
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
