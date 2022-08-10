@@ -1,0 +1,57 @@
+package packsdfbsk;
+
+import java.util.*;
+import java.sql.*;
+public class demo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*Scanner sc = new Scanner(System.in);
+		System.out.println("Enter ID: ");
+		int id = sc.nextInt();
+		System.out.println("Enter name: ");
+		String name = sc.next();
+		System.out.println("Enter age: ");
+		int age = sc.nextInt();
+		System.out.println("Enter salary: ");
+		int sal = sc.nextInt();
+		System.out.println("Enter designation: ");
+		String desig = sc.next();
+		
+		System.out.println("ID: "+id);
+		System.out.println("Name: "+name);
+		System.out.println("Age: "+age);
+		System.out.println("Salary: "+sal);
+		System.out.println("Designation: "+desig);*/;
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","tiger");
+			PreparedStatement stmt = con.prepareStatement("insert into emp values('abcdefg',29,1000000)");
+			stmt.close();
+			con.close();
+			System.out.println("Data inserted....!");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+}
+
+/*JDBC and we java to perform 5 steps:
+1)Load the driver: 
+Class.forName("com.mysql.jdbc.Driver");
+
+2) Create a connection:
+Connection con = DriverManager.getConnection("jdbc:msql://","root","root");
+
+3)	`creating the statement:
+statement stmt = con.creatrStatement();
+
+4)execute the statement:
+stmt.executr("Insert into myEmployee
+
+5)close the statement
+stmt.close();
+*/
+
