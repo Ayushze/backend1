@@ -1,0 +1,29 @@
+package packsdg;
+
+import java.util.*;
+import java.sql.*;
+public class demo5 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter ID: ");
+		int id = sc.nextInt();
+		
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection a = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployee","root","Tiger@123");
+			PreparedStatement x = a.prepareStatement("delete from emp2 where id = ?");
+			x.setInt(1,id);
+			x.execute();
+			x.close();
+			a.close();
+			System.out.println("data deleted.......");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
