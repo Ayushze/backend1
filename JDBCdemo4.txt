@@ -1,0 +1,31 @@
+package packanf;
+
+import java.util.*;
+import java.sql.*;
+public class demo4 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter ID: ");
+		int id = sc.nextInt();
+		System.out.println("Enter salary: ");
+		int salary = sc.nextInt();
+		
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection a = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployee","root","Tiger@123");
+			PreparedStatement x = a.prepareStatement("update emp2  set salary=? where id=?");
+			x.setInt(1,salary);
+			x.setInt(2,id);
+			x.execute();
+			x.close();
+			a.close();
+			System.out.println("data updated.......");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
