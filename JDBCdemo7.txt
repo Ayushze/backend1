@@ -1,0 +1,39 @@
+package Packasnb;
+
+import java.util.*;
+import java.sql.*;
+public class demo7 {
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		/*Scanner sc = new Scanner(System.in);
+		System.out.println("Enter ID: ");
+		int id = sc.nextInt();
+		System.out.println("Enter name: ");
+		String name = sc.next();
+		System.out.println("Enter age: ");
+		int age = sc.nextInt();
+		System.out.println("Enter salary: ");
+		int sal = sc.nextInt();
+		System.out.println("Enter designation: ");
+		String desig = sc.next();*/
+		
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection a = DriverManager.getConnection("jdbc:mysql://localhost:3306/myemployee","root","Tiger@123");
+			Statement x = a.createStatement();
+			ResultSet rs = x.executeQuery("select * from emp2");
+			while(rs.next()) {
+				System.out.println(rs.getInt(1)+"->"+rs.getString(2)+"->"+rs.getInt(3)+"->"+rs.getInt(4)+"->"+rs.getString(5));
+			}
+			x.close();
+			a.close();
+			System.out.println("data inserted.......");
+		}
+		catch(Exception e) {
+			System.out.println(e);
+		}
+	}
+
+}
+
+/*CRUD: Create, Read, Update, Delete*/
