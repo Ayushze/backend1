@@ -1,0 +1,10 @@
+1)create the dynamic web project
+2)cretae the servlet project through the dynamic web project
+3)add servlet-api jar file
+4)add some statements to read the data from web project in servlet project
+5)add the five operations in the servelet project to add the servlet to jdbc(mysql command line).
+6)add servlet project name to web project via <form action ="servelet project name">
+6)add mysql version 8 jar file at libraries and also in lib
+7)add the server to the eclipse(apache tomcat 9.0)
+8)start the server and see if you are getting any errors. If the error is regarding the port then change the port to somthhing else(like port from 8080 to 8081)
+9)Once the server starts, try to run the web project with the server.
