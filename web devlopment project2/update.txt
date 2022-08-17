@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body bgcolor="yellow">
+	<div style="text-align: Center;">
+	<h1>Welcome to Web Application</h1>
+		<form action ="updateDemo" >
+		Name :<input type="text" name="Name"><br>
+		salary :<input type="text" name="salary"><br>
+		<br>
+		
+		<input type="submit" value="UPDATE">
+		<input type="reset" value="RESET">
+		</form>
+	</div>	
+</body>
+</html>
