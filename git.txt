@@ -1,0 +1,14 @@
+This is version 1 of my project
+
+pwd(presend working directory),ls(list),cd(change directory)
+
+git status
+git init
+git status
+git add . or git add --a
+git status
+git commit -m "Initial commit"
+git push
+git add First.txt
+git log
+git clone https://github.com/tensorflow/tensorflow.git
